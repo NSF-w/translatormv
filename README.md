@@ -38,7 +38,7 @@ c. Install Python
 pkg install python
 ```
 
-d. Install github
+d. Install git
 
 ```
 pkg install github
