@@ -4,7 +4,6 @@ import os
 import time
 from googletrans import Translator  # Ensure googletrans is installed
 from termcolor import colored  # Ensure termcolor is installed
-import math
 import re
 
 # Load the replacement dictionary from replace.json
@@ -41,10 +40,10 @@ def display_progress(file_name, current, total):
 def clean_text(text):
     return text.replace("\u200b", "").strip() if text else text
 
-# Extract translatable text while skipping any tags in the format \HURUF[ANGKA]
+# Extract translatable text while skipping \HURUF[ANGKA] patterns like \c[8] or \n[1]
 def extract_translatable_text(text):
-    # Generalize the regex to match any pattern \HURUF[ANGKA] like \N[123] or \C[1]
-    parts = re.split(r'(\\[A-Z]+\[\d+\])', text)
+    # Use regex to capture escape sequences and other parts
+    parts = re.split(r'(\\[A-Za-z]+\[\d+\])', text)  # Adjusted to capture sequences like \c[8] or \n[1]
     return parts
 
 # Improved text wrapping for dialog boxes
@@ -65,7 +64,7 @@ def wrap_text(text, max_len):
     
     return "\n".join(lines)
 
-# Translate a sentence, skipping any \HURUF[ANGKA] patterns and retrying on failures
+# Translate a sentence, skipping \HURUF[ANGKA] patterns
 def translate_sentence(tr, text, replacement_dict, dst='en', verbose=False, max_retries=10, retry_delay=3):
     if text is None:
         with open('failed_translations.log', 'a') as log_file:
@@ -78,8 +77,8 @@ def translate_sentence(tr, text, replacement_dict, dst='en', verbose=False, max_
     
     for part in parts:
         # Skip any part matching \HURUF[ANGKA], e.g. \C[1], \N[123]
-        if re.match(r'\\[A-Z]+\[\d+\]', part):
-            translated_parts.append(part)
+        if re.match(r'(\\[A-Za-z]+\[\d+\])', part):
+            translated_parts.append(part)  # Skip these parts without translation
         else:
             for attempt in range(max_retries):
                 try:
