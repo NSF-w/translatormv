@@ -101,6 +101,9 @@ python bot.py -dl en
 ```
 
 - Untuk cek list bahasa bisa di cek di [sini](https://cloud.google.com/translate/docs/languages?hl=id)
+- Hasil terjemahannya ada di folder dialogs_id/en/lainnya sesuai dengan terjemahan bahasa yang digunakan 
+- jangan lupa setiap ingin menggunakan translate lagi pastikan folder dialogs dan dialogs_id/en/lainnya kosong agar tidak tercampur dengan json game lainnya 
+- translate membutuhkan koneksi internet dan waktu
 
 ### Done otomatis translate 
 
