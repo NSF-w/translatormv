@@ -92,7 +92,7 @@ python bot.py -dl id
 
 Note :
 - edit replace.json untuk edit otomatis kata tertentu pada waktu menerjemahkan
-- untuk mengganti terjemahan tinggal diubah "id" ke bahasa lainnya misalkan "en" untuk inggris, "jv" untuk jawa, "su" untuk sunda
+- untuk mengganti terjemahan tinggal diubah "id" ke bahasa lainnya misalkan "en" untuk inggris, "jw" untuk jawa, "su" untuk sunda
 contoh :
 menerjemahkan bahasa apapun ke bahasa Inggris 
 
