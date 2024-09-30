@@ -41,7 +41,7 @@ pkg install python
 d. Install git
 
 ```
-pkg install github
+pkg install git
 ```
 
 ### 3. Membuat Folder Baru Di Internal HP dan download file translator nya
