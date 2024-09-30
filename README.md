@@ -3,7 +3,7 @@ Translator RPG MAKER MV
 
 ## Bahan
 
-[Termux-FDROID](https://f-droid.org/repo/com.termux_1000.apk) / [Termux-PS](https://play.google.com/store/apps/details?id=com.termux)
+[Termux-FDROID](https://f-droid.org/en/packages/com.termux/) / [Termux-PS](https://play.google.com/store/apps/details?id=com.termux)
 
 [File Translator] #Nanti saja downloadnya via termux
 
