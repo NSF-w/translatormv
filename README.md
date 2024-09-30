@@ -29,7 +29,7 @@ b. cek termux update dan upgrade
 
 ```
 apt-get update
-apt-get updgrade
+apt-get upgrade
 ```
 
 c. Install Python
